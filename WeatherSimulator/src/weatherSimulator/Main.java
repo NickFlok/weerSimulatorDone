@@ -65,7 +65,7 @@ public class Main {
             stationListSur = new ArrayList<String>();
             
         }
-        
+        //split de string zodat je de value hebt zonder de haakjes.
         public String split(String s){
         	
             int beginString = -1;
@@ -94,6 +94,7 @@ public class Main {
                 out = new PrintWriter("/home/pi/data/weather.xml");
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 
+		//filtering om de values uit de generator te halen.
                 String line;
                 while ((line = in.readLine()) != null) {
                     if(line.contains("<STN>")) {
@@ -127,7 +128,7 @@ public class Main {
                     	//Error check
                     	windSpeed = ErrorCorrection.errorCheck(windQueue, windSpeed);
                     	cloudCoverage = ErrorCorrection.errorCheck(cloudQueue, cloudCoverage);
-                    	
+                    	//checken bij welk station de values horen en ze toevoegen aan strings en die wegschrijven.
                     	System.out.println(station);
                         System.out.println(date);
                         System.out.println(time);
@@ -165,7 +166,7 @@ public class Main {
                     	//Error check
                     	windSpeed = ErrorCorrection.errorCheck(windQueue, windSpeed);
                     	cloudCoverage = ErrorCorrection.errorCheck(cloudQueue, cloudCoverage);
-                    	
+                    	//checken bij welk station de values horen en ze toevoegen aan strings en die wegschrijven.
                         System.out.println(station);
                         System.out.println(date);
                         System.out.println(time);
@@ -204,7 +205,7 @@ public class Main {
                     	//Error check
                     	windSpeed = ErrorCorrection.errorCheck(windQueue, windSpeed);
                     	cloudCoverage = ErrorCorrection.errorCheck(cloudQueue, cloudCoverage);
-                    	
+                    	//checken bij welk station de values horen en ze toevoegen aan strings en die wegschrijven.
                         System.out.println(station);
                         System.out.println(date);
                         System.out.println(time);
